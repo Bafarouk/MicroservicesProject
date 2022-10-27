@@ -16,10 +16,11 @@ router.post(
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.status(400).send(errors.array());
+      throw new Error('invalid email or password');
     }
 
     console.log('creqting a user...');
+    throw new Error('Lost connection with database');
 
     res.send({});
   }
